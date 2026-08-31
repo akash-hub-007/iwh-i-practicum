@@ -1,21 +1,26 @@
 doctype html
-html 
-    head 
-        title= `${title}`
-        meta(name="viewport" content="width=device-width, initial-scale=1")
+html
+    head
+        title= title
         link(rel="stylesheet", href="/css/style.css")
-    body    
-        h1 Custom Objects Table
-        a(href="/update-cobj") Add/Update this table
-        table 
-            thead
-                tr
-                    th Name
-                    th Type
-                    th Storage
-            tbody
-                each object in data
+
+    body
+        main.container
+
+            h1 Books
+
+            a.button(href="/update-cobj") Add to this table
+
+            table
+                thead
                     tr
-                        td #{object.properties.name}
-                        td #{object.properties.type}
-                        td #{object.properties.storage}
+                        th Name
+                        th Author
+                        th Genre
+
+                tbody
+                    each book in data
+                        tr
+                            td= book.properties.name
+                            td= book.properties.author
+                            td= book.properties.genre
